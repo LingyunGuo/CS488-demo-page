@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Blobs: A Ray Tracing Project</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/jquery.scrollbar.css">
+    <link rel="stylesheet" href="css/fancybox.min.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    
+  </head>
+  <body>
+  
+
+  <div class="site-wrap">
+
+  <div class="site-mobile-menu">
+    <div class="site-mobile-menu-header">
+      <div class="site-mobile-menu-close mt-3">
+        <span class="icon-close2 js-menu-toggle"></span>
+      </div>
+    </div>
+    <div class="site-mobile-menu-body"></div>
+  </div>
+
+  <header class="header-bar d-flex d-lg-flex align-items-center" data-aos="fade-down">
+    <div class="site-logo">
+      <a href="index.html">Blobs: A Ray Tracing Project</a>
+    </div>
+    
+    <div class="d-inline-block d-xl-block ml-md-0 ml-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span> <span style="position: relative;top: -4px; text-transform: uppercase;">Menu</span></a></div>
+
+    <div class="main-menu d-none">
+      <ul class="js-clone-nav">
+        <li class="active"><a href="index.html">Home</a></li>
+        <li><a href="photos.html">Photos</a></li>
+        <li><a href="bio.html">Report</a></li>
+        <!-- <li><a href="contact.html">Contact</a></li> -->
+      </ul>
+    </div>
+  </header> 
+  
+
+  <div class="swiper-container gallery-top">
+<div class="swiper-wrapper">
+<div class="swiper-slide cover" style="background-image: url('images/1-basic.png');">
+  <a href="images/1-basic.png" data-fancybox="gallery" class="zoom"><span class="icon-search"></span></a>
+  <div class="img-info">
+    <span class="btn-toggle-expand"><span class="icon-call_made"></span></span>
+    <div class="img-info-content">
+      <h2>Blobs in 3D</h2>
+      <div class="scrollbar-inner style-scrollbar-sm js-scrollbar-container">
+        <p class="mb-0">In this project, I implemented a simple ray tracer with several additional features, and used it to generate an interesting final scene. In the final scene I created two little creatures, which I got the idea from the Blob emoji that was trending on Android platform a couple years ago. The final scene also includes a moon that is generated using Perlin noise, everything is contained in a room with light set on the top.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="swiper-slide cover" style="background-image: url('images/2-extra-primitive.png');">
+  <a href="images/2-extra-primitive.png" data-fancybox="gallery" class="zoom"><span class="icon-search"></span></a>
+  <div class="img-info">
+    <span class="btn-toggle-expand"><span class="icon-call_made"></span></span>
+    <div class="img-info-content">
+      <h2>Extra Primitives</h2>
+      <div class="scrollbar-inner style-scrollbar-sm js-scrollbar-container">
+      <p class="mb-0">In this project I implemented the following primitives: sphere, cube, plane, torus, cylinder and the shape of blobs. All of them inherit from the Primitive class, and have a member method that can compute its intersection with a ray in its model coordinate. For each of these primitives, we transform a ray from world coordinate into its model coordinate, plug the parametric equation for ray in the implicit equation defined in each class, and solve for roots that satisfy all requirements. Here, torus, cylinder and the shape of blobs are demonstrated</p>
+    </div>
+</div>
+  </div>
+</div>
+
+<div class="swiper-slide cover" style="background-image: url('images/3-texture-mapping.png');">
+  <a href="images/3-texture-mapping.png" data-fancybox="gallery" class="zoom"><span class="icon-search"></span></a>
+  <div class="img-info">
+    <span class="btn-toggle-expand"><span class="icon-call_made"></span></span>
+    <div class="img-info-content">
+        <h2>Texture Mapping</h2>
+        <div class="scrollbar-inner style-scrollbar-sm js-scrollbar-container">
+          <p class="mb-0">
+            Texture mapping is a method that allows us to render detailed images without constructing millions of polygons to shade complex object surfaces. To map a texture onto an object, we have to convert a 3D position in the scene into a 2D point in the texture image, and many factors need to be taken into consideration. <br/>
+            In this project, I implemented 2D texture mapping for sphere, plane, cylinder and blob.
+          </p>
+        </div>
+      </div>
+  </div>
+</div>
+
+<div class="swiper-slide cover" style="background-image: url('images/4-refraction.png');">
+  <a href="images/4-refraction.png" data-fancybox="gallery" class="zoom"><span class="icon-search"></span></a>
+  <div class="img-info">
+    <span class="btn-toggle-expand"><span class="icon-call_made"></span></span>
+    <div class="img-info-content">
+        <h2>Refraction</h2>
+        <div class="scrollbar-inner style-scrollbar-sm js-scrollbar-container">
+          <p class="mb-0">Refraction is a physical phenomenon where light travelling from on medium into another gets bent. The change in light direction can be computed based on the refractivity, or index of refraction, of the mediums.<br/>
+            Refracted colour can be computed by recursively following bent rays and calling the shading function on them until either we reach desired recursive depth or no object is hit by the ray. Once we get the refracted colour, we need to multiply it by some parameters such as fresnel coefficient and transparency.</p>
+        </div>
+      </div>
+  </div>
+</div>
+
+<div class="swiper-slide cover" style="background-image: url('images/4-refraction-2.png');">
+  <a href="images/4-refraction-2.png" data-fancybox="gallery" class="zoom"><span class="icon-search"></span></a>
+  <div class="img-info">
+    <span class="btn-toggle-expand"><span class="icon-call_made"></span></span>
+    <div class="img-info-content">
+        <h2>Refraction</h2>
+        <div class="scrollbar-inner style-scrollbar-sm js-scrollbar-container">
+          <p class="mb-0">Refraction is a physical phenomenon where light travelling from on medium into another gets bent. The change in light direction can be computed based on the refractivity, or index of refraction, of the mediums.<br/>
+            Refracted colour can be computed by recursively following bent rays and calling the shading function on them until either we reach desired recursive depth or no object is hit by the ray. Once we get the refracted colour, we need to multiply it by some parameters such as fresnel coefficient and transparency.</p>
+        </div>
+      </div>
+  </div>
+</div>
+
+<div class="swiper-slide cover" style="background-image: url('images/5-glossy-reflection.png');">
+  <a href="images/5-glossy-reflection.png" data-fancybox="gallery" class="zoom"><span class="icon-search"></span></a>
+  <div class="img-info">
+    <span class="btn-toggle-expand"><span class="icon-call_made"></span></span>
+    <div class="img-info-content">
+        <h2>Glossy Reflection</h2>
+        <div class="scrollbar-inner style-scrollbar-sm js-scrollbar-container">
+          <p class="mb-0">
+            Glossy reflection refers to the optical phenomenon where many objects cannot reflect as well as mirrors. The cause of this phenomenon is the imperfection of object surfaces. Perfect reflection can only occur on surface that is perfectly smooth, which is not quite common in the nature. Instead, the reflection we observe in our life usually looks hazy and blurred.<br/>
+            In ray tracing, it is hard to precisely create a rough surface and render reflection on top of it, instead, we can manually add in perturbation when we calculate reflection so as to simulate the roughness.<br/>
+            In this project, I added a float number for each PhongMaterial to represent the glossiness of its surface. The computation of reflected colour is executed multiple times, each with a small random perturbation vector added into the reflected ray direction. In this way, we mimic the situation where rough surface perturb the reflection angle, and produce blurry reflection on surfaces.</p>
+        </div>
+      </div>
+  </div>
+</div>
+
+<div class="swiper-slide cover" style="background-image: url('images/6-anti-aliasing.png');">
+  <a href="images/6-anti-aliasing.png" data-fancybox="gallery" class="zoom"><span class="icon-search"></span></a>
+  <div class="img-info">
+    <span class="btn-toggle-expand"><span class="icon-call_made"></span></span>
+    <div class="img-info-content">
+        <h2>Anti Aliasing</h2>
+        <div class="scrollbar-inner style-scrollbar-sm js-scrollbar-container">
+          <p class="mb-0">When we render an image where the pixel amount is not large enough, objects will have jagged edges and looks distorted. This is an effect called aliasing. The fact that our images are constructed by pixels means that we can never draw a continuous edge if it's not aligned with either $x$ or $y$ axis. However, we can reduce aliasing by applying supersampling technique.<br/>
+            Traditionally, we only shoot on ray for each pixel, which means that if we are drawing a black edge on white background, one pixel is either black or white, thus the final image looks jagged. By using supersampling, we shoot multiple rays for each pixel, and then take the average of all the results we get to retrieve the final value. In this way we allows a transition between black and white, even though each pixel still only has one colour, the whole image looks more natural and less jagged in our eyes.</p>
+        </div>
+      </div>
+  </div>
+</div>
+
+<div class="swiper-slide cover" style="background-image: url('images/6-anti-aliasing-2.png');">
+  <a href="images/6-anti-aliasing-2.png" data-fancybox="gallery" class="zoom"><span class="icon-search"></span></a>
+  <div class="img-info">
+    <span class="btn-toggle-expand"><span class="icon-call_made"></span></span>
+    <div class="img-info-content">
+        <h2>Anti Aliasing</h2>
+        <div class="scrollbar-inner style-scrollbar-sm js-scrollbar-container">
+          <p class="mb-0">
+            In addition, I implemented adaptive anti-aliasing, which will compare the result from each sample, and if the difference in each sample is big enough, it will recursively execute anti-aliasing in that pixel again with smaller division, until it either reaches the maximum level or the result is close enough.</p>
+        </div>
+      </div>
+  </div>
+</div>
+
+<div class="swiper-slide cover" style="background-image: url('images/7-soft-shadow.png');">
+  <a href="images/7-soft-shadow.png" data-fancybox="gallery" class="zoom"><span class="icon-search"></span></a>
+  <div class="img-info">
+    <span class="btn-toggle-expand"><span class="icon-call_made"></span></span>
+    <div class="img-info-content">
+        <h2>Soft Shadow</h2>
+        <div class="scrollbar-inner style-scrollbar-sm js-scrollbar-container">
+          <p class="mb-0">In ray tracing, when a light source is blocked by another object, we do not add colour value to the surface being blocked by others, which at the end produces shadows on surface. The shadow is not soft shadow, meaning that it has a sharp edge , which is quite different from what we usually observe. The reaosn that shadows look sharp and "hard" is that we are using point light source, so every area on every surface is either hit by light or blocked by others. Again, we can solve this problemby adding perturbation, the same as we produce glossy reflection.<br/>
+            This time the perturbance is added to the position of light source. In other words, we can imagine the light not as a point, but an area. Each time we test if a light can reach an area, we cast a ray randomly from that area to do the computation. At the end we take the average of all iterations, which gives us a soft gradient from shadow to lit-up area.</p>
+        </div>
+      </div>
+  </div>
+</div>
+
+<div class="swiper-slide cover" style="background-image: url('images/8-motion-blur.png');">
+  <a href="images/8-motion-blur.png" data-fancybox="gallery" class="zoom"><span class="icon-search"></span></a>
+  <div class="img-info">
+    <span class="btn-toggle-expand"><span class="icon-call_made"></span></span>
+    <div class="img-info-content">
+        <h2>Motion Blur</h2>
+        <div class="scrollbar-inner style-scrollbar-sm js-scrollbar-container">
+          <p class="mb-0">Human eyes can only process about 24 frames per second, this phenomenon is called the persistence of vision. Similarly, for cameras this rate is determined by its shutter speed. If objects are moving within the period of exposure, the photo will capture a blurry image of those objects, and we can tell from the photo that these objects are moving.<br/>
+            To produce such effect, we need the similar technique that we applied for rendering soft shadows or glossy reflection. We define a movement or deformation for an object, such as an equation to compute its location based on time, then for each sample we pick a random time frame, get the current position, trace rays to produce the image. After several passes, we average all the results to get the final scene.</p>
+        </div>
+      </div>
+  </div>
+</div>
+<div class="swiper-slide cover" style="background-image: url('images/9-perlin-noise.png');">
+  <a href="images/9-perlin-noise.png" data-fancybox="gallery" class="zoom"><span class="icon-search"></span></a>
+  <div class="img-info">
+    <span class="btn-toggle-expand"><span class="icon-call_made"></span></span>
+    <div class="img-info-content">
+        <h2>Perlin Noise</h2>
+        <div class="scrollbar-inner style-scrollbar-sm js-scrollbar-container">
+          <p class="mb-0">Perlin noise is developed by Ken Perlin to generate more natural noise in computer graphics. In his paper in 2002 he described the algorithm the computes a natural noise, which involves hashing positions and repeating computation for different octaves.<br/>
+            We can adjust the noise by setting different scale and weight value for each octave. Depending on the number of octaves we want, combining results from all octave computations produces a nice and natural noise map, which we can make use of in our own way. <br/>
+            In this project, I used perlin noise to colour the surface of a sphere to make it looks like the surface of moon.</p>
+        </div>
+      </div>
+  </div>
+</div>
+<div class="swiper-slide cover" style="background-image: url('images/10-final-scene.png');">
+  <a href="images/10-final-scene.png" data-fancybox="gallery" class="zoom"><span class="icon-search"></span></a>
+  <div class="img-info">
+    <span class="btn-toggle-expand"><span class="icon-call_made"></span></span>
+    <div class="img-info-content">
+        <h2>Final Scene</h2>
+        <div class="scrollbar-inner style-scrollbar-sm js-scrollbar-container">
+          <p class="mb-0">This scene is created to illustrate some of the techniques I learned throughout the term.</p>
+        </div>
+      </div>
+  </div>
+</div>
+
+</div>
+
+<div class="swiper-button-next swiper-button-white"></div>
+<div class="swiper-button-prev swiper-button-white"></div>
+</div>
+<div class="swiper-container gallery-thumbs">
+<div class="swiper-wrapper">
+<div class="swiper-slide cover" style="background-image:url(images/1-basic.png)"></div>
+<div class="swiper-slide cover" style="background-image:url(images/2-extra-primitive.png)"></div>
+<div class="swiper-slide cover" style="background-image:url(images/3-texture-mapping.png)"></div>
+<div class="swiper-slide cover" style="background-image:url(images/4-refraction.png)"></div>
+<div class="swiper-slide cover" style="background-image:url(images/4-refraction-2.png)"></div>
+<div class="swiper-slide cover" style="background-image:url(images/5-glossy-reflection.png)"></div>
+<div class="swiper-slide cover" style="background-image:url(images/6-anti-aliasing.png)"></div>
+<div class="swiper-slide cover" style="background-image:url(images/6-anti-aliasing-2.png)"></div>
+<div class="swiper-slide cover" style="background-image:url(images/7-soft-shadow.png)"></div>
+<div class="swiper-slide cover" style="background-image:url(images/8-motion-blur.png)"></div>
+<div class="swiper-slide cover" style="background-image:url(images/1-basic.png)"></div>
+<div class="swiper-slide cover" style="background-image:url(images/2-extra-primitive.png)"></div>
+<div class="swiper-slide cover" style="background-image:url(images/3-texture-mapping.png)"></div>
+<div class="swiper-slide cover" style="background-image:url(images/4-refraction.png)"></div>
+<div class="swiper-slide cover" style="background-image:url(images/4-refraction-2.png)"></div>
+<div class="swiper-slide cover" style="background-image:url(images/5-glossy-reflection.png)"></div>
+<div class="swiper-slide cover" style="background-image:url(images/6-anti-aliasing.png)"></div>
+<div class="swiper-slide cover" style="background-image:url(images/6-anti-aliasing-2.png)"></div>
+<div class="swiper-slide cover" style="background-image:url(images/7-soft-shadow.png)"></div>
+<div class="swiper-slide cover" style="background-image:url(images/8-motion-blur.png)"></div>
+</div>
+</div>
+
+</div> <!-- .site-wrap -->
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <!-- <script src="js/jquery.stellar.min.js"></script> -->
+  <script src="js/jquery.countdown.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/bootstrap-datepicker.min.js"></script>
+  <script src="js/aos.js"></script>
+
+  <script src="js/jquery.fancybox.min.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <script src="js/jquery.scrollbar.js"></script>
+  <script src="js/main.js"></script>
+
+  
+    
+  </body>
+</html>
